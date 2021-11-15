@@ -8,7 +8,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
+      path: '/vue3-ip-tracker',
       name: 'Home',
       component: Home,
       meta: {

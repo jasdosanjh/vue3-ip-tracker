@@ -1,7 +1,16 @@
-# Vue 3 + Vite
+## Vue3 Ip Tracker
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple IP tracker application where you can enter an IP address and see some information for that IP address. You can also view information for your own IP address.
 
-## Recommended IDE Setup
+## Live Demo:
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+https://jasdosanjh.github.io/vue3-ip-tracker/
+
+## Built With
+
+- Vue 3
+- Composition API
+- Tailwind
+- Axios
+- Leaftlet.js
+- REST API (https://geo.ipify.org/docs)

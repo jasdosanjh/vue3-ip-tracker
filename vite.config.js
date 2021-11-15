@@ -11,5 +11,6 @@ export default defineConfig({
       replacement: path.resolve(__dirname, 'src'),
     },
   ],
+  base: '/vue3-ip-tracker/',
   plugins: [vue()],
 });
