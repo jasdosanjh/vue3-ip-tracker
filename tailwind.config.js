@@ -1,10 +1,10 @@
 module.exports = {
-  purge: { content: ["./public/**/*.html", "./src/**/*.vue"] },
+  purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        "header-pattern": "url('pattern-bg.png')",
+        'header-pattern': "url('pattern-bg.png')",
       }),
     },
   },
