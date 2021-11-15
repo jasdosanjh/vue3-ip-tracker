@@ -2,6 +2,7 @@
   <div class="flex flex-col h-screen max-h-screen">
     <div
       class="
+        z-20
         flex
         justify-center
         relative
@@ -42,17 +43,45 @@
       </div>
       <InformationPanel />
     </div>
+    <div id="map" class="h-full z-10"></div>
   </div>
 </template>
 
 <script>
 import InformationPanel from "../components/InformationPanel.vue";
+import leaflet from "leaflet";
+import { onMounted } from "vue";
 
 export default {
   name: "Home",
 
   components: {
     InformationPanel,
+  },
+
+  setup() {
+    let myMap;
+
+    onMounted(() => {
+      myMap = leaflet.map("map").setView([51.505, -0.09], 13);
+
+      leaflet
+        .tileLayer(
+          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${
+            import.meta.env.VITE_MAPBOX_TOKEN
+          }`,
+          {
+            attribution:
+              'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: "mapbox/streets-v11",
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: import.meta.env.VITE_MAPBOX_TOKEN,
+          }
+        )
+        .addTo(myMap);
+    });
   },
 };
 </script>
