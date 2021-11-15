@@ -4,7 +4,7 @@
       class="
         flex
         justify-center
-        realtive
+        relative
         bg-header-pattern bg-cover
         px-4
         pt-8
@@ -23,7 +23,7 @@
               focus:outline-none
             "
             type="text"
-            placeholder="Please enter an IP address or leave empty for your IP information"
+            placeholder="Please enter an IP address or leave empty for your IP informationPanel"
           />
           <i
             class="
@@ -40,14 +40,19 @@
           ></i>
         </div>
       </div>
+      <InformationPanel />
     </div>
   </div>
 </template>
 
 <script>
+import InformationPanel from "../components/InformationPanel.vue";
+
 export default {
   name: "Home",
 
-  components: {},
+  components: {
+    InformationPanel,
+  },
 };
 </script>
