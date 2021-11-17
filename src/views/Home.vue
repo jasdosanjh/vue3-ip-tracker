@@ -13,7 +13,7 @@
           <i @click="getIpInformation" class="cursor-pointer bg-black text-white px-4 rounded-tr-md rounded-br-md flex items-center fas fa-chevron-right"></i>
         </div>
       </div>
-      <InformationPanel v-if="ipInformation" :ipInformation="ipInformation" />
+      <InformationPanel v-if="ipInformation" :ipInformation="ipInformation" :isLoading="isLoading" />
     </div>
     <div id="map" class="h-full z-10"></div>
   </div>
@@ -37,6 +37,7 @@ export default {
 
     const ipInformation = ref(null);
     const queryIp = ref('');
+    const isLoading = ref(false);
 
     onMounted(() => {
       myMap = leaflet.map('map').setView([51.505, -0.09], 9);
@@ -54,6 +55,7 @@ export default {
     });
 
     const getIpInformation = async () => {
+      isLoading.value = true;
       try {
         const data = await axios.get(`https://geo.ipify.org/api/v1?apiKey=${import.meta.env.VITE_GEOLOCATION_API_KEY}&ipAddress=${queryIp.value}`);
         const result = data.data;
@@ -69,10 +71,12 @@ export default {
         myMap.setView([ipInformation.value.lat, ipInformation.value.lng], 13);
       } catch (error) {
         alert(error.message);
+      } finally {
+        isLoading.value = false;
       }
     };
 
-    return { ipInformation, queryIp, getIpInformation };
+    return { ipInformation, queryIp, getIpInformation, isLoading };
   },
 };
 </script>

@@ -11,7 +11,8 @@
     "leaflet": "^1.7.1",
     "node-sass": "^6.0.1",
     "vue": "^3.2.16",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vue-spinner": "^1.0.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",

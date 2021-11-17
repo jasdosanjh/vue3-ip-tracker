@@ -2195,6 +2195,11 @@
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.18"
 
+"vue-spinner@^1.0.4":
+  "integrity" "sha512-GNG2F+8BLX201JT/jUX+84Gsi3ZteVQwt9K7mues3ts9FcQ95dGn7uu6a5ndSxdYYUEzfh1KngZiOE0u+l4itA=="
+  "resolved" "https://registry.npmjs.org/vue-spinner/-/vue-spinner-1.0.4.tgz"
+  "version" "1.0.4"
+
 "vue@^3.0.0", "vue@^3.2.16", "vue@3.2.21":
   "integrity" "sha512-jpy7ckXdyclfRzqLjL4mtq81AkzQleE54KjZsJg/9OorNVurAxdlU5XpD49GpjKdnftuffKUvx2C5jDOrgc/zg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.21.tgz"
